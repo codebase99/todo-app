@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    
+}
+.BodyContainer{
+    display:flex;
+    width:100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.ToDoListContainer{
+    display: flex;
+    flex-direction: column;
+    max-width:60%;
+    height: 60%;
+    flex:2;
+    
+    
+}
+.ListHeader{
+    flex:1;
+}
+.ListContainer{
+    flex:4;
+}
+.ListInputContainer{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    
+}
+.ListInput{
+    flex:4;
+}
+.AddListItem{
+    flex:1;
+}
+
+
+

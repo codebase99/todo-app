@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+
+.ListItemContainer{
+    display:flex;
+    flex-direction: row;
+}
+.ListItemContent{
+    flex:3;
+}
+.RemoveListItemButton{
+    flex:1;
+}
+.Checkbox{
+    flex:1;
+}

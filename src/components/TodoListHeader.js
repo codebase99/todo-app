@@ -1,9 +1,10 @@
 import React from 'react';
+import '../css/ToDoListHeaderCSS.css'
 
 const ToDoListHeader = () => {
      return(
-         <div>
-             <p>todo list header</p>
+         <div class="ToDoListHeader">
+             <h1>todo list header</h1>
          </div>
      )
 }

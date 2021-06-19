@@ -1,13 +1,12 @@
 import React from 'react';
-import ListItem from './ListItem';
+import ListItemContainer from './ListItemContainer';
 
 const ListContainer = () => {
 
 
     return(
-        <div>
-           <p>list container</p> 
-           <ListItem/>
+        <div className="ListContainer" >
+           <ListItemContainer/>
         </div>
     )
 }

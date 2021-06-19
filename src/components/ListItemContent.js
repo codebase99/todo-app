@@ -5,7 +5,7 @@ import React from 'react'
 const ListItemContent = () => {
     return (
         <div>
-            <p>list item container</p>
+            <p>list item content</p>
         </div>
     )
 }

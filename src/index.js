@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ToDoListContainer from './components/ToDoListContainer'
 
 const App = () =>{
     return(
@@ -10,6 +11,6 @@ const App = () =>{
 }
 
 ReactDOM.render(
-    <App/>,
+    <ToDoListContainer/>,
     document.querySelector('#root')
 )

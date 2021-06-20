@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+}
+.ListInputContainer{
+    display:flex;
+    align-items: center;
+}
+.ListInput{
+    font-size: 24px;
+    width: 100%;
+}

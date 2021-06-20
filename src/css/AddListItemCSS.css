@@ -1,0 +1,12 @@
+*{
+    box-sizing:border-box;
+
+}
+.AddListItemContainer{
+    text-align: center;
+}
+.AddListItem{
+    height: 32px;
+    width: 100%;
+    
+}

@@ -1,11 +1,12 @@
 import React from 'react';
+import '../css/AddListItemCSS.css'
 
 const AddListItem = () => {
 
 
     return(
-        <div>
-            <p>addlistitem</p>
+        <div class="AddListItemContainer">
+            <button class="AddListItem">Add Item</button>
         </div>
     )
 }

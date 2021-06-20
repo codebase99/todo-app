@@ -1,0 +1,6 @@
+*{
+    box-sizing: border-box;
+}
+.ListContainer{
+    overflow-y: auto;
+}

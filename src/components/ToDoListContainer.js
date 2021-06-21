@@ -1,21 +1,48 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ToDoListHeader from './TodoListHeader'
 import ListContainer from './ListContainer';
-import AddListItem from './AddListItem';
+// import AddListItem from './AddListItem';
 import ListInput from './ListInput';
 import '../css/ToDoListContainerCSS.css'
+import { v4 as uuidv4 } from 'uuid';
+
 
 const ToDoListContainer = () => {
-
-
+    const [input, setInput]=useState('')
+    // const [clicked, setClicked]= useState(false);
+    const [listItems, setListItems]=useState([])
+    
+    const storeInput = (input) =>{
+        setInput(input)
+    }
+    const handleClick = ()=>{
+        if(input!==""){
+            var temp=[...listItems, 
+                {
+                    id:uuidv4(),
+                    content:input
+                }]
+            
+        setListItems(temp)
+        
+        // setClicked(true)
+        }
+    }
+    // console.log(listItems)
+    // console.log(input)
+    
+    
+    
     return(
         <div className="BodyContainer">
             <div className="ToDoListContainer">
                 <div className="ToDoListHeader"><ToDoListHeader/></div>
-                <div className="ListContainer"><ListContainer/></div>
+                <div className="ListContainer"  ><ListContainer updatedListItems={listItems}/></div>
                 <div className="ListInputContainer">
-                    <div className="ListInput"><ListInput/></div>
-                    <div className="AddListItem"><AddListItem/></div>
+                    <div className="ListInput" ><ListInput handleChange={(input)=>storeInput(input)}/></div>
+                    <div class="AddListItemContainer">
+                        <button class="AddListItem" onClick={()=>handleClick()}>Add Item</button>
+                    </div>
                 </div>
             </div>
         </div>

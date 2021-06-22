@@ -24,7 +24,6 @@ const ToDoListContainer = () => {
             
         setListItems(temp)
         setInput("")
-        console.log(input)
         }
     }
 
@@ -33,7 +32,6 @@ const ToDoListContainer = () => {
     }
 
     const removeListItem = (itemId)=>{
-        console.log("reached todolist container")
         const temp = [...listItems]
         const temp2=temp.filter((obj)=>{
             if(obj.id!==itemId){
@@ -46,12 +44,27 @@ const ToDoListContainer = () => {
         setListItems(temp2)
 
     }
+
+    const handleCheckbox = (itemId) =>{
+        const temp = [...listItems]
+        const temp2 = temp.map((obj)=>{
+            if (obj.id===itemId){
+                if(obj.done===false) obj.done=true
+                else obj.done=false
+                return obj
+            }
+            else {
+                return obj
+            }
+        })
+        setListItems(temp2)
+    }
     
     return(
         <div className="BodyContainer">
             <div className="ToDoListContainer">
                 <div className="ToDoListHeader"><ToDoListHeader/></div>
-                <div className="ListContainer"><ListContainer removeListItem={(itemId)=>{removeListItem(itemId)}} updatedListItems={listItems}/></div>
+                <div className="ListContainer"><ListContainer handleCheckbox={(itemId)=>{handleCheckbox(itemId)}} removeListItem={(itemId)=>{removeListItem(itemId)}} updatedListItems={listItems}/></div>
                 <div className="ListInputContainer">
                     <div className="ListInput" >
                         <ListInput 

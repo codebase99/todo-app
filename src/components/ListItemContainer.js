@@ -7,17 +7,20 @@ import '../css/ListItemContainerCSS.css'
 
 const ListItemContainer = (props) => {
     const removeListItem = (itemId) =>{
-        console.log("at list item container")
         props.removeListItem(itemId)
+    }
+    const handleCheckbox=()=>{
+        const itemId=props.id;
+        props.handleCheckbox(itemId)
     }
     
     return (
-        <div class="ListItemContainer">
+        <div className="ListItemContainer">
             <div className="ListItemContent">
                 <ListItemContent content={props.content}/>
             </div>
             <div className="Checkbox" >
-                <Checkbox done={props.done}/>
+                <Checkbox handleCheckbox={()=>{handleCheckbox()}}done={props.done} />
             </div>
             <div className="RemoveListItemButton">
                 <RemoveListItemButton removeListItem={(itemId)=>{removeListItem(itemId)}}id={props.id}/>

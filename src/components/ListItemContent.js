@@ -1,11 +1,9 @@
-
-
 import React from 'react'
 
-const ListItemContent = () => {
+const ListItemContent = (props) => {
     return (
         <div>
-            <p>list item content</p>
+            <p>{props.content}</p>
         </div>
     )
 }

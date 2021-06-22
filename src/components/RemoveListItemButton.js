@@ -4,7 +4,7 @@ import React from 'react'
 const RemoveListItemButton = () => {
     return (
         <div>
-            <p>remove list item button </p>
+            <button>Remove</button>
         </div>
     )
 }

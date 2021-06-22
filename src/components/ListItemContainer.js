@@ -5,12 +5,13 @@ import Checkbox from './Checkbox';
 import '../css/ListItemContainerCSS.css'
 
 
-const ListItemContainer = () => {
+const ListItemContainer = (props) => {
+    console.log(props.id,props.content,props.done)
     return (
         <div class="ListItemContainer">
-            <div className="ListItemContent"><ListItemContent/></div>
-            <div className="Checkbox"><Checkbox/></div>
-            <div className="RemoveListItemButton"><RemoveListItemButton/></div>
+            <div className="ListItemContent"><ListItemContent content={props.content}/></div>
+            <div className="Checkbox" ><Checkbox done={props.done}/></div>
+            <div className="RemoveListItemButton"><RemoveListItemButton id={props.id}/></div>
         </div>
     )
 }

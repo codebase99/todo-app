@@ -11,7 +11,6 @@ const ToDoListContainer = () => {
     const [input, setInput]=useState('')
     // const [clicked, setClicked]= useState(false);
     const [listItems, setListItems]=useState([])
-    
     const storeInput = (input) =>{
         setInput(input)
     }
@@ -20,7 +19,8 @@ const ToDoListContainer = () => {
             var temp=[...listItems, 
                 {
                     id:uuidv4(),
-                    content:input
+                    content:input,
+                    done:false
                 }]
             
         setListItems(temp)
@@ -39,9 +39,9 @@ const ToDoListContainer = () => {
                 <div className="ToDoListHeader"><ToDoListHeader/></div>
                 <div className="ListContainer"  ><ListContainer updatedListItems={listItems}/></div>
                 <div className="ListInputContainer">
-                    <div className="ListInput" ><ListInput handleChange={(input)=>storeInput(input)}/></div>
-                    <div class="AddListItemContainer">
-                        <button class="AddListItem" onClick={()=>handleClick()}>Add Item</button>
+                    <div className="ListInput" ><ListInput onkeyDown={()=>{console.log("key pressed")}} handleChange={(input)=>storeInput(input)}/></div>
+                    <div className="AddListItemContainer">
+                        <button className="AddListItem" onClick={()=>handleClick()}>Add Item</button>
                     </div>
                 </div>
             </div>

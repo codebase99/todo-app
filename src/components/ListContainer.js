@@ -4,27 +4,18 @@ import '../css/ListContainerCSS.css'
 
 const ListContainer = (props) => {
     
-
-    console.log(props)
+    const renderList=()=>{
+        var list = props.updatedListItems.map((obj)=>{
+            return <ListItemContainer key={obj.id} id={obj.id} content={obj.content} done={obj.done} />
+            
+        })
+        return list
+    }
+    
 
     return(
         <div className="ListContainer" >
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-           <ListItemContainer/>
-
+            {renderList()}
         </div>
     )
 }

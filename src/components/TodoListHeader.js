@@ -3,7 +3,7 @@ import '../css/ToDoListHeaderCSS.css'
 
 const ToDoListHeader = () => {
      return(
-         <div class="ToDoListHeader">
+         <div className="ToDoListHeader">
              <h1>todo list header</h1>
          </div>
      )

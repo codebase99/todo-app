@@ -38,5 +38,14 @@
     flex:1;
 }
 
+.AddListItemContainer{
+    text-align: center;
+}
+.AddListItem{
+    height: 32px;
+    width: 100%;
+    
+}
+
 
 

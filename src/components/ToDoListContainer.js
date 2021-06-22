@@ -9,7 +9,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 const ToDoListContainer = () => {
     const [input, setInput]=useState('')
-    // const [clicked, setClicked]= useState(false);
     const [listItems, setListItems]=useState([])
     const storeInput = (input) =>{
         setInput(input)
@@ -24,22 +23,43 @@ const ToDoListContainer = () => {
                 }]
             
         setListItems(temp)
-        
-        // setClicked(true)
+        setInput("")
+        console.log(input)
         }
     }
-    // console.log(listItems)
-    // console.log(input)
-    
-    
+
+    const handleEnterKey = () => {
+        handleClick()
+    }
+
+    const removeListItem = (itemId)=>{
+        console.log("reached todolist container")
+        const temp = [...listItems]
+        const temp2=temp.filter((obj)=>{
+            if(obj.id!==itemId){
+                return true;
+            }
+            else{
+                return false;
+            }
+        })
+        setListItems(temp2)
+
+    }
     
     return(
         <div className="BodyContainer">
             <div className="ToDoListContainer">
                 <div className="ToDoListHeader"><ToDoListHeader/></div>
-                <div className="ListContainer"  ><ListContainer updatedListItems={listItems}/></div>
+                <div className="ListContainer"><ListContainer removeListItem={(itemId)=>{removeListItem(itemId)}} updatedListItems={listItems}/></div>
                 <div className="ListInputContainer">
-                    <div className="ListInput" ><ListInput onkeyDown={()=>{console.log("key pressed")}} handleChange={(input)=>storeInput(input)}/></div>
+                    <div className="ListInput" >
+                        <ListInput 
+                        handleEnterKey={()=>{handleEnterKey()}} 
+                        handleChange={(input)=>storeInput(input)}
+                        value={input}
+                        />
+                    </div>
                     <div className="AddListItemContainer">
                         <button className="AddListItem" onClick={()=>handleClick()}>Add Item</button>
                     </div>

@@ -1,10 +1,15 @@
 import React from 'react'
 
 
-const RemoveListItemButton = () => {
+const RemoveListItemButton = (props) => {
+    const handleClick = ()=>{
+        console.log("at remove list item button",props.id)
+        props.removeListItem(props.id)
+        
+    }
     return (
         <div>
-            <button>Remove</button>
+            <button onClick={()=>{handleClick()}}>Remove</button>
         </div>
     )
 }
